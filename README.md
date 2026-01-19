@@ -25,3 +25,9 @@ Projeyi yerel makinenizde çalıştırmak için Docker'ın yüklü olması yeter
 git clone [https://github.com/emreyoruk64/raccoon-fastapi-docker.git](https://github.com/emreyoruk64/raccoon-fastapi-docker.git)
 cd raccoon-fastapi-docker
 
+### 2. Docker Konteynerini başlatın
+### Aşağıdaki komut, gerekli imajı oluşturacak ve servisi 7001 portunda başlatacaktır:
+```bash
+docker-compose up --build
+
+### Terminalde Uvicorn running on http://0.0.0.0:8000 yazısını gördüğünüzde servis hazırdır.
