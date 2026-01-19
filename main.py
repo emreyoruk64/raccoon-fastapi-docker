@@ -11,7 +11,7 @@ import traceback
 # Colab'de eğitilen modeli burada tanıması için __main__'i bu dosyaya yönlendiriyoruz.
 sys.modules['__main__'] = sys.modules[__name__]
 
-## --- 1- Model Tanımı ---
+## --- 1. MODEL TANIMI ---
 class ObjectDetector(nn.Module):
     def __init__(self, baseModel, numClasses):
         super(ObjectDetector, self).__init__()
@@ -74,16 +74,16 @@ async def load_model():
     global model
     print("⏳ Model yükleniyor...")
     try:
-        # HEM CPU AYARI HEM DE GÜVENLİK AYARI BURADA:
+        # HEM CPU AYARI HEM DE GÜVENLİK AYARI 
         model = torch.load(
             "detector.pth", 
             map_location=torch.device('cpu'), 
-            weights_only=False  # <--- İşte bu kritik parça!
+            weights_only=False  
         )
         model.eval()
-        print("✅ Model başarıyla yüklendi!")
+        print("Model başarıyla yüklendi!")
     except Exception as e:
-        print(f"❌ MODEL YÜKLEME HATASI:\n{e}")
+        print(f"MODEL YÜKLEME HATASI:\n{e}")
         print(traceback.format_exc())
 
 # --- 5. ENDPOINT ---
@@ -124,5 +124,5 @@ async def predict(file: UploadFile = File(...)):
         }
 
     except Exception as e:
-        print(f"❌ Tahmin Hatası: {e}")
+        print(f"Tahmin Hatası: {e}")
         raise HTTPException(status_code=500, detail=str(e))

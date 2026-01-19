@@ -7,7 +7,7 @@ services:
     ports:
       - "7001:8000"  # Dışarıya 7001, İçeriye 8000
     volumes:
-      - .:/app       # Geliştirme sırasında kod değişikliğini görmek için (opsiyonel)
+      - .:/app       # Geliştirme sırasında kod değişikliğini görmek için
     environment:
       - PYTHONUNBUFFERED=1
     # Mac M1/M2 uyumluluğu için platform belirtmeye genelde gerek yoktur,

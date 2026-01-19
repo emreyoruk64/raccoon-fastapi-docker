@@ -6,7 +6,6 @@ WORKDIR /app
 
 # Sistem bağımlılıklarını yükle (OpenCV için gerekli minimal kütüphaneler)
 # libgl1-mesa-glx: OpenCV'nin çalışması için gerekebilir (cv2 kullanmasak da torchvision isteyebilir)
-# GÜNCEL KISIM
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
