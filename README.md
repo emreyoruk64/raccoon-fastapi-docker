@@ -43,7 +43,7 @@ Servis çalıştığında Swagger UI arayüzü üzerinden interaktif olarak test
 
 1. Tarayıcınızda şu adrese gidin:
 
-**http://localhost:7001/docs**
+    **http://localhost:7001/docs**
 
 2. `POST /predict` endpoint'ine tıklayın.
 
