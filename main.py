@@ -57,7 +57,7 @@ class ObjectDetector(nn.Module):
 
         return (bboxes, classLogits)
     
-# --- 3. AYARLAR ---
+# --- 2. AYARLAR ---
 app = FastAPI(title="Raccoon Detector API")
 
 transform = transforms.Compose([
@@ -68,7 +68,7 @@ transform = transforms.Compose([
 
 model = None
 
-# --- 4. MODEL YÜKLEME (Startup) ---
+# --- 3. MODEL YÜKLEME (Startup) ---
 @app.on_event("startup")
 async def load_model():
     global model
@@ -86,7 +86,7 @@ async def load_model():
         print(f"MODEL YÜKLEME HATASI:\n{e}")
         print(traceback.format_exc())
 
-# --- 5. ENDPOINT ---
+# --- 4. ENDPOINT ---
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     global model
